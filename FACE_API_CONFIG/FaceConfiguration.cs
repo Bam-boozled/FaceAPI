@@ -16,21 +16,13 @@ namespace FACE_API_CONFIG
         public static string APIkey = ConfigurationManager.AppSettings["APIkey"];
 
 
-        /*
-           AddFaceToPerson(string personGroupId, string personId, string imageFilePath)
-           Add a face to the target perosn. 
-
-        parameters:
-
-        personGroupId : Specifying the target person group to create the person.
-        personId: 	    Target person that the face is added to.
-        imageFilePath: 	Face image location. 
-
-        returns:
-
-        A successful call returns the new persistedFaceId. 
-
-    */
+   
+        /// <summary>
+        ///  Add a face to the target perosn. 
+        /// </summary>
+        /// <param name="personGroupId">Specifying the target person group to create the person.</param>
+        /// <param name="personId">Target person that the face is added to.</param>
+        /// <param name="imageFilePath">Face image location.</param>
         public static async void AddFaceToPerson(string personGroupId, string personId, string imageFilePath)
         {
 
@@ -66,23 +58,13 @@ namespace FACE_API_CONFIG
 
         }
 
-        /*  
-          DeleteFaceFromPerson(string personGroupId, string personId, string persistedFaceId)
-          Deletes face from person in group
-
-          parameters:
-
-          personGroupId : Specifying the person group containing the person.
-          personId:       Specifying the person that the target persisted face belong to.
-          persistedFaceId: The persisted face to remove. 
-          This persistedFaceId is returned from AddFaceToPerson(string personGroupId, string personId, string imageFilePath).
-
-          returns:
-
-          A successful call returns an empty response body
-
-      */
-
+    
+        /// <summary>
+        /// Deletes face from person in group
+        /// </summary>
+        /// <param name="personGroupId">Specifying the person group containing the person.</param>
+        /// <param name="personId">Specifying the person that the target persisted face belong to.</param>
+        /// <param name="persistedFaceId">The persisted face to remove. </param>
         public static async void DeleteFaceFromPerson(string personGroupId, string personId, string persistedFaceId)
         {
 
@@ -100,7 +82,11 @@ namespace FACE_API_CONFIG
         }
 
 
-
+        /// <summary>
+        /// Returns the contents of the specified file as a byte array.
+        /// </summary>
+        /// <param name="imageFilePath">location of .jpg file</param>
+        /// <returns>The byte array of the image data.</returns>
         static byte[] GetImageAsByteArray(string imageFilePath)
         {
             FileStream fileStream = new FileStream(imageFilePath, FileMode.Open, FileAccess.Read);

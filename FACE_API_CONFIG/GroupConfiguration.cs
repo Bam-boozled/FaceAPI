@@ -15,20 +15,12 @@ namespace FACE_API_CONFIG
         public static string APIkey = ConfigurationManager.AppSettings["APIkey"];
 
 
-        /*  
-            CreateGroup(string personGroupId, string groupInfo)
-            Creates new group. Linked to subscriptionKey. 
-         
-            parameters:
-
-            personGroupId : Person group display name.The maximum length is 128.
-            groupInfo :     User-provided data attached to the person group.The size limit is 16KB.
-
-            returns:
-
-            A successful call returns an empty response body
-            
-        */
+ 
+        /// <summary>
+        /// Create a new person group with specified personGroupId, name and user-provided userData. 
+        /// </summary>
+        /// <param name="personGroupId">Person group display name.The maximum length is 128.</param>
+        /// <param name="groupInfo">User-provided data attached to the person group.The size limit is 16KB.</param>
         public static async void CreateGroup(string personGroupId, string groupInfo)
         {
 
@@ -54,20 +46,10 @@ namespace FACE_API_CONFIG
         }
 
 
-        /*  
-            DeleteGroup(string personGroupId)
-            Deletes group linked to subscriptionKey
-
-            parameters:
-       
-            personGroupId : The personGroupId of the person group to be deleted.
-
-            returns:
-
-            A successful call returns an empty response body
-
-        */
-
+        /// <summary>
+        /// Delete an existing person group. Persisted face images of all people in the person group will also be deleted.
+        /// </summary>
+        /// <param name="personGroupId">The personGroupId of the person group to be deleted.</param>
         public static async void DeleteGroup(string personGroupId)
         {
 

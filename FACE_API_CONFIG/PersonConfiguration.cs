@@ -14,22 +14,13 @@ namespace FACE_API_CONFIG
     {
         public static string APIkey = ConfigurationManager.AppSettings["APIkey"];
 
-        /*
-         * AddPersonToGroup(string personGroupId, string personName, string personInfo)
-         * Create a person and add it to the group. 
-         
-            parameters:
-
-            personGroupId : Specifying the target person group to create the person.
-            personName: 	Display name of the target person. The maximum length is 128.
-            personInfo: 	Field for user-provided data attached to a person. Size limit is 16KB.
-
-            returns:
-
-            A successful call returns a new personId created. 
-
-                 
-        */
+    
+        /// <summary>
+        /// Create a person and add it to the group
+        /// </summary>
+        /// <param name="personGroupId">Specifying the target person group to create the person.</param>
+        /// <param name="personName">Display name of the target person. The maximum length is 128.</param>
+        /// <param name="personInfo">Field for user-provided data attached to a person. Size limit is 16KB.</param>
         public static async void AddPersonToGroup(string personGroupId, string personName, string personInfo)
         {
 
@@ -55,21 +46,11 @@ namespace FACE_API_CONFIG
         }
 
 
-        /*  
-          DeletePerson(string personGroupId, string personId)
-          Deletes person from group
-
-          parameters:
-
-          personGroupId : Specifying the person group containing the person.
-          personId:       The target personId to delete.
-
-          returns:
-
-          A successful call returns an empty response body
-
-      */
-
+        /// <summary>
+        /// Deletes person from group
+        /// </summary>
+        /// <param name="personGroupId">Specifying the person group containing the person.</param>
+        /// <param name="personId">The target personId to delete.</param>
         public static async void DeletePerson(string personGroupId, string personId)
         {
 
